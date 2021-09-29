@@ -6,14 +6,12 @@
 2. implement dequeue()
 Write a function to delete the first num of the array. */
 
-let arr = [3,4,5,16,7,8,2,6,1]
+let arr = [3, 4, 5, 16, 7, 8, 2, 6, 1];
 
-function enqueue(){
- // not done
+function enqueue(array, num) {
+  // not done
 }
 
-function dequeue(){
- // not done
+function dequeue(array) {
+  // not done
 }
-
-
