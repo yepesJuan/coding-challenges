@@ -16,7 +16,7 @@ function detectWord(arr) {
     let letter = ''
     let word = ''
     for( let i = 0; i < arr.length ; i++){
-        if ( arr[i].toLowerCase() === arr[i]) {
+        if ( arr[i].toLowerCase() === arr[i] ) {
             letter = arr[i]
             word += letter
         }
