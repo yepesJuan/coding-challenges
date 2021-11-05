@@ -10,6 +10,6 @@ function evenPls(array) {
     console.log(newArr)  
 }
 evenPls(arr)
-
-// arr.filter(x => x % 2 === 0)
-// })
+ 
+const evenArr = arr.filter(x => x % 2 === 0)
+console.log(evenArr);
