@@ -1,5 +1,5 @@
 const wordA = "LoKo";
-const wordB = "kolo";
+const wordB = "LOko";
 
 function isAnagram(word1, word2) {
   if (
@@ -24,7 +24,7 @@ function isAnagram(word1, word2) {
   //   console.log(sortedWord2);
 
   if (sortedWord1 === sortedWord2) return true;
-    else return false;
+  else return false;
 }
 
 console.log(isAnagram(wordA, wordB));
