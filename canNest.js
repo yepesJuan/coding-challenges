@@ -6,18 +6,16 @@
 // arr1's max is less than arr2's max.
 
 function canNest(arr1, arr2) {
-    if (Math.min(...arr1) > Math.min(...arr2) && 
-    Math.max(...arr1) < Math.max(...arr2)) {
-        return true;
-    } else {
-        return false;
-    }
+  if (
+    Math.min(...arr1) > Math.min(...arr2) &&
+    Math.max(...arr1) < Math.max(...arr2)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
-let array1 = [1, 2, 3, 4]
-let array2 = [0, 6]
+let array1 = [1, 3];
+let array2 = [0, 5];
 
-console.log(canNest(array1,array2))
-
-
-
-
+console.log(canNest(array1, array2));
