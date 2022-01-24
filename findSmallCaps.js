@@ -1,4 +1,4 @@
-// A word is on the loose and now has tried to hide amongst a crowd of tall letters! 
+// A word is on the loose and now has tried to hide amongst a crowd of tall letters!
 // Help write a function to detect what the word is, knowing the following rules:
 
 // The wanted word is in lowercase.
@@ -6,23 +6,24 @@
 // Note that the word will be spread out amongst the random letters, but their letters remain in the same order.
 
 // Examples
-// detectWord("UcUNFYGaFYFYGtNUH") ➞ "cat"
+// detectWord("aaHeEaLLaaaO") ➞ "HELLO"
 
-// detectWord("bEEFGBuFBRrHgUHlNFYaYr") ➞ "burglar"
+// detectWord("BxxOxxCxxAx xCxxOxxxDxxE") ➞ "BOCA CODE"
 
-// detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment") ➞ "embezzlement"
+// detectWord("WeeExEK:2") ➞ "WEEK:2"
+
+const word1 = "aaHeEaLLaaaO";
+const word2 = "BxxOxxCxxAx xCxxOxxxDxxE";
 
 function detectWord(arr) {
-    let letter = ''
-    let word = ''
-    for( let i = 0; i < arr.length ; i++){
-        if ( arr[i].toLowerCase() === arr[i] ) {
-            letter = arr[i]
-            word += letter
-        }
+  let letter = "";
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].toUpperCase() === arr[i]) {
+      letter += arr[i];
     }
-    return word
+  }
+  return letter;
 }
 
-console.log(detectWord("bEEFGBuFBRrHgUHlNFYaYr"))
-console.log(detectWord('smdfHdsmEdLddLOw')) // toUpperCase
+console.log(detectWord("aaHelElLLeeoO"));
+console.log(detectWord("smdfHdsmEdLddLOw")); // toUpperCase

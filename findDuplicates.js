@@ -1,19 +1,25 @@
-const a = [1, 2, 3, 3, 4, 4, 4];
+const a = [1, 2, 3, 3, 5, 5, 5];
 /******************* Map *************************/
 function countDuplicate(a) {
-  let counts = {};
+  let bucket = {};
 
   for (let i = 0; i < a.length; i++) {
-    if (counts[a[i]]) {
-      counts[a[i]] += 1;
+    if (bucket[a[i]]) {
+      bucket[a[i]] += 1;
     } else {
-      counts[a[i]] = 1;
+      bucket[a[i]] = 1;
     }
   }
-  console.log(counts);
-  for (let prop in counts) {
-    if (counts[prop] >= 2) {
-      console.log(prop + " counted: " + counts[prop] + " times.");
+  console.log(bucket);
+  const values = Object.values(bucket);
+  const index = Object.keys(bucket).find(
+    (key) => bucket[key] === Math.max(...values)
+  );
+  console.log(index + " is the mode");
+
+  for (let key in bucket) {
+    if (bucket[key]) {
+      console.log(key + " counted: " + bucket[key] + " times.");
     }
   }
 }
@@ -31,7 +37,7 @@ a.forEach((item) => {
 });
 console.log(count);
 
-/******************** Filter but has bug ************************/
-
-const duplicates = a.filter((item, index) => index !== a.indexOf(item));
+/******************** Filter ************************/
+const val = Object.values(a);
+const duplicates = a.filter((item, index) => index === Math.max(...val));
 console.log(duplicates);

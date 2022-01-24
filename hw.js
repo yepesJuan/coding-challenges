@@ -22,7 +22,6 @@ function howMany(a) {
 }
 
 console.log(howMany(testArray));
-console.log(testArray.includes(true, 0));
 
 let arr = [1, 4, 6, 9, 2, 11];
 function findOdds(array) {
