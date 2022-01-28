@@ -3,7 +3,7 @@
 // that add up to thee target value
 
 const target = 7;
-let array = [3, 2, 6, 1];
+let array = [2, 6, 3, 1];
 let result = [];
 
 function twoSum(arr, target) {
@@ -21,7 +21,7 @@ function twoSum(arr, target) {
 twoSum(array, target);
 console.log("Target =", target, ", Compliments =", result[0], "&", result[1]);
 
-/***************************************************************/
+// /***************************************************************/
 
 function twoSum2(array, target) {
   let map = {};

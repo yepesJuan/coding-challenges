@@ -23,7 +23,6 @@ function howMany(a) {
 
 console.log(howMany(testArray));
 
-let arr = [1, 4, 6, 9, 2, 11];
 function findOdds(array) {
   const newArr = [];
   for (i = 0; i < array.length; i++) {
@@ -33,4 +32,5 @@ function findOdds(array) {
   }
   return newArr;
 }
+let arr = [1, 4, 6, 9, 2, 11];
 console.log(findOdds(arr));

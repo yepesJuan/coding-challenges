@@ -19,6 +19,24 @@ function bubbleSort(array) {
   return array;
 }
 
-let numbers = [12, 10, 15, 11, 14, 13, 16];
-bubbleSort(numbers);
-console.log(numbers);
+let numbers = [10, 2, 100, 56];
+console.log(bubbleSort(numbers));
+
+function bubbleSort2(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      // checking to see if its sorted
+      if (array[i] > array[j]) {
+        // is not sorted yet so lets SWAP first element with the next one
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+  }
+
+  return array;
+}
+
+let numbers2 = [4, 5, 3];
+console.log(bubbleSort2(numbers2));
