@@ -1,39 +1,30 @@
 //output name of beer, the price,and the average ratings using asterisk
 // i.e **** is a 4-star ratings
 // (use Math.round) */
-const beers = require("./beers.json");
+const beers = require("/Users/juanyepes/code/codingChallenges/beers.json");
 
 function findBeer(beer) {
   console.log(beer.name + " " + beer.price);
-  ratingConvert(beer.rating.average);
+  console.log("Rating = " + " " + ratingConvert(beer.rating.average));
 }
-
-
 
 function ratingConvert(rate) {
   let avg = Math.round(rate);
   switch (avg) {
     case 1:
-      console.log("*");
-      break;
+      return "*";
     case 2:
-      console.log("**");
-      break;
+      return "**";
     case 3:
-      console.log("***");
-      break;
+      return "***";
     case 4:
-      console.log("****");
-      break;
+      return "****";
     case 5:
-      console.log("*****");
-      break;
+      return "*****";
     default:
-      console.log("no rating");
+      return "no rating";
   }
 }
 
-const beerNum = process.argv[2]; // from command line
-console.time();
+const beerNum = process.argv[2] - 1; // process.arg[0] is node ||| process.arg[1] is beerSelect.js ||| process.arg[2] would be the Id of beer u want
 findBeer(beers[beerNum]);
-console.timeEnd();
