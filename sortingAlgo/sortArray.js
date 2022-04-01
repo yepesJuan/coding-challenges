@@ -8,7 +8,7 @@ function bubbleSort(array) {
     for (let i = 1; i < array.length; i++) {
       // checking to see if its sorted
       if (array[i - 1] > array[i]) {
-        done = false; // is not sorted yet so lets SWAP first element with the next one
+        done = false; // is not sorted yet so lets SWAP current element with the next one
         let temp = array[i - 1];
         array[i - 1] = array[i];
         array[i] = temp;
@@ -19,7 +19,7 @@ function bubbleSort(array) {
   return array;
 }
 
-let numbers = [10, 2, 100, 56];
+let numbers = [10, 2, 100, 56, 3, 6];
 console.log(bubbleSort(numbers));
 
 function bubbleSort2(array) {
@@ -38,5 +38,5 @@ function bubbleSort2(array) {
   return array;
 }
 
-let numbers2 = [4, 5, 3];
+let numbers2 = [4, 5, 3, 0, 15, 5];
 console.log(bubbleSort2(numbers2));

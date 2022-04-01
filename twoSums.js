@@ -4,9 +4,9 @@
 
 const target = 7;
 let array = [2, 6, 3, 1];
-let result = [];
 
 function twoSum(arr, target) {
+  let result = [];
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] + arr[j] === target) {
@@ -28,8 +28,8 @@ function twoSum2(array, target) {
 
   for (let i = 0; i < array.length; i++) {
     let compliment = target - array[i]; // 4
-    console.log(compliment);
-    console.log(map[compliment]);
+    // console.log(compliment);
+    // console.log(map[compliment]);
     if (map[compliment] !== undefined) {
       console.log(array[map[compliment]], "+", array[i], "=", target);
       return [map[compliment], i];

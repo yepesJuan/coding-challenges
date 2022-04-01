@@ -8,7 +8,7 @@ function fibonacci(n) {
   return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-console.log(fibonacci2(10));
+console.log(fibonacci(5));
 
 // iterate
 function fibonacci2(n) {
