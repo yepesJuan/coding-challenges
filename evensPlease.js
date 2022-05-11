@@ -1,4 +1,4 @@
-let arr = [1, 4, 6, 9, 2];
+const arr = [1, 4, 6, 9, 2];
 
 function evenPls(array) {
   const newArr = [];
@@ -7,9 +7,9 @@ function evenPls(array) {
       newArr.push(array[i]);
     }
   }
-  console.log(newArr);
+  return newArr;
 }
-evenPls(arr);
+console.log(evenPls(arr));
 
 const evenArr = arr.filter((x) => x % 2 === 0);
 console.log(evenArr);

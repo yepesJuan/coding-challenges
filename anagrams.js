@@ -1,30 +1,13 @@
-const wordA = "LoKo";
-const wordB = "LOko";
+const wordA = "Secure";
+const wordB = "resCue";
 
 function isAnagram(word1, word2) {
-  if (
-    word1.length == 0 ||
-    word2.length == 0 ||
-    word1 == null ||
-    word2 == null
-  ) {
+  if ((word1.length || word2.length) == 0 || word1 == null || word2 == null)
     return false;
-  }
-  if (word1.length == 1 && word2.length == 1) {
-    return true;
-  }
 
-  word1 = word1.toLowerCase();
-  word2 = word2.toLowerCase();
+  const sortedWord1 = word1.toLowerCase().split("").sort().join("");
+  const sortedWord2 = word2.toLowerCase().split("").sort().join("");
 
-  let sortedWord1 = word1.split("").sort().join("");
-  let sortedWord2 = word2.split("").sort().join("");
-
-  //   console.log(sortedWord1);
-  //   console.log(sortedWord2);
-
-  if (sortedWord1 === sortedWord2) return true;
-  else return false;
+  return sortedWord1 === sortedWord2 ? true : false;
 }
-
 console.log(isAnagram(wordA, wordB));
