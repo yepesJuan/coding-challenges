@@ -24,6 +24,11 @@ const square = (n, i, j) => {
     return square(n, i, mid);
   }
 };
+
+12 = 3 * 3
+12 = 4 * 4
+3.46
+
 // Function to find the square root of n
 const findSqrt = (num) => {
   let i = 1;
@@ -40,3 +45,5 @@ const findSqrt = (num) => {
   }
 };
 console.log(findSqrt(33));
+
+10 

@@ -11,5 +11,6 @@ function fizzBuzz(num) {
     }
   }
 }
+
 const n = 16;
 fizzBuzz(n);
