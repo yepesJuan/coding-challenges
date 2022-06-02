@@ -1,12 +1,12 @@
 const attributes = {
-  hello: "Hello,Hello",
+  hello: "Hello,2ello",
   hello1: "Hello,Hello",
   hello2: "Hello,Hello,Hi",
   hello3: "true",
 };
 
 const addSpacetoComma = (str) => {
-  return str.replace(/,/g, ", ");
+  return str.replace(/,/g, ", "); // regex or regular expression
 };
 
 const seperateString = (obj) => {
@@ -16,6 +16,7 @@ const seperateString = (obj) => {
   }
   return new_obj;
 };
+
 const seperateString1 = (obj) => {
   const new_obj = {};
   for (const key in obj) {
@@ -24,4 +25,5 @@ const seperateString1 = (obj) => {
   return new_obj;
 };
 
-console.log(seperateString1(attributes));
+console.log(seperateString(attributes));
+s;
