@@ -12,5 +12,10 @@ function fizzBuzz(num) {
   }
 }
 
-const n = 16;
+const n = 30;
 fizzBuzz(n);
+
+// 1 to 16
+// but those are divisible 3 console fizz
+// but those are divisible 5 console buzz
+// but those are divisible 5 and 3 console fizzBuzz
