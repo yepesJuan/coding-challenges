@@ -6,7 +6,12 @@ const target = 7;
 let array = [2, 6, 3, 1];
 
 function fastTwoSum(arr, _target) {
-  let map = {};
+  let map = {
+    // 2: 0,
+    // 6: 1, 
+    // 3: 2,
+
+  };
 
   for (let i = 0; i < arr.length; i++) {
     let difference = target - arr[i];
