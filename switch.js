@@ -43,7 +43,7 @@ function assignGrade(num) {
   }
 }
 
-assignGrade(69);
+assignGrade(5);
 /****************************************/
 
 let duh = "orange";
