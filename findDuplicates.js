@@ -1,43 +1,34 @@
-const a = [1, 2, 3, 3, 5, 5, 5];
+const a = [1, 2, 3, 3, 5, 5, 5, 2, 2, 2];
 /******************* Map *************************/
 function countDuplicate(a) {
   let bucket = {};
+  a.forEach((item) => {
+    bucket[item] ? bucket[item] += 1 : bucket[item] = 1
+  })
 
-  for (let i = 0; i < a.length; i++) {
-    if (bucket[a[i]]) {
-      bucket[a[i]] += 1;
-    } else {
-      bucket[a[i]] = 1;
-    }
-  }
-  console.log(bucket);
-  const values = Object.values(bucket);
   const index = Object.keys(bucket).find(
-    (key) => bucket[key] === Math.max(...values)
+    (key) => bucket[key] === Math.max(...Object.values(bucket))
   );
-  console.log(index + " is the mode");
 
   for (let key in bucket) {
-    if (bucket[key]) {
-      console.log(key + " counted: " + bucket[key] + " times.");
-    }
+    console.log(key + " counted: " + bucket[key] + " times.");
   }
+  console.log(index + " is the mode");
 }
 countDuplicate(a);
 
-/******************** For Each ************************/
-
-const count = {};
-a.forEach((item) => {
-  if (count[item]) {
-    count[item] += 1;
-    return;
+/******************* Reduce *************************/
+const a1 = [65, 65, 21, 53, 321, 321, 1, 1, 1, 1];
+function modearray(array) {
+  let count = {};
+  for (const element of array) {
+    if (count[element]) {
+      count[element] += 1;
+    } else {
+      count[element] = 1;
+    }
   }
-  count[item] = 1;
-});
-console.log(count);
+  return Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
+}
 
-/******************** Filter ************************/
-const val = Object.values(a);
-const duplicates = a.filter((item, index) => index === Math.max(...val));
-console.log(duplicates);
+console.log(modearray(a1));

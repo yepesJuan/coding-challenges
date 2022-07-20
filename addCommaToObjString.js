@@ -26,4 +26,4 @@ const seperateString1 = (obj) => {
 };
 
 console.log(seperateString(attributes));
-s;
+
