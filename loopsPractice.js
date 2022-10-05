@@ -49,7 +49,18 @@ const employeeInfo = [
   },
 ];
 
-// find all employees whose bday month is in may 
+employeeInfo.sort((a, b) => {
+  if (a.name < b.name) {
+    return -1;
+  }
+  if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+});
+console.log(employeeInfo);
+
+// find all employees whose bday month is in may
 
 // console.log(employeeInfo[0].dob.slice(0, 2))
 // console.log(employeeInfo[1].dob.slice(0, 2))
@@ -58,20 +69,15 @@ const employeeInfo = [
 // console.log(employeeInfo[4].dob.slice(0, 2))
 // console.log(employeeInfo[5].dob.slice(0, 2))
 
-
-
-
-
 function birthdayMonth(month) {
-  const employee = []
-  for(let i = 0; i < employeeInfo.length; i++){
-     if(employeeInfo[i].dob.slice(0, 2) == month){
-        employee.push(employeeInfo[i].name)
-     }
+  const employee = [];
+  for (let i = 0; i < employeeInfo.length; i++) {
+    if (employeeInfo[i].dob.slice(0, 2) == month) {
+      employee.push(employeeInfo[i].name);
+    }
   }
-  return employee.join(", ")
+  return employee.join(", ");
 }
-
 
 const months = {
   Jan: "01",
@@ -86,53 +92,9 @@ const months = {
   Oct: "10",
   Nov: "11",
   Dec: "12",
-}
+};
 
-
-
-console.log(birthdayMonth(months.Jun))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(birthdayMonth(months.Jun));
 
 // // find the employee who's birthdays who are in May
 // function birthdaysMonth(employeeInfo, month) {

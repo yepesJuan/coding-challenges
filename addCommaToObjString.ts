@@ -5,7 +5,6 @@ type Attri = {
   hello3: string;
   hello4: string;
 };
-
 interface IObj1 {
   attr: {
     [key: string]: string;
@@ -23,8 +22,8 @@ const addSpacetoComma = (str: string): string => {
   return str.replace(/,(?=[^\s])/g, ", "); // regex or regular expression
 };
 
-const seperateString = (obj: Attri) => {
-  const new_obj = {};
+const seperateString = (obj: IObj1["attr"]) => {
+  const new_obj: IObj1["attr"] = {};
   for (const key in obj) {
     new_obj[key] = addSpacetoComma(obj[key]);
   }
@@ -32,7 +31,7 @@ const seperateString = (obj: Attri) => {
 };
 
 const seperateString1 = (obj: IObj1["attr"]): IObj1["attr"] => {
-  const new_obj = {};
+  const new_obj: IObj1["attr"] = {};
   for (const key in obj) {
     new_obj[key] = obj[key].replace(/,(?=[^\s])/g, ", ");
   }

@@ -11,7 +11,8 @@ function findMinAndMax(array) {
       max = array[i];
     }
   }
-  return (result = [min, max]);
+  result.push(min, max);
+  return result;
 }
 let arr = [8, 18, 34, 56, 707, 2021, 77, 9];
 let result = findMinAndMax(arr);
