@@ -1,10 +1,3 @@
-type Attri = {
-  hello: string;
-  hello1: string;
-  hello2: string;
-  hello3: string;
-  hello4: string;
-};
 interface IObj1 {
   attr: {
     [key: string]: string;
@@ -30,13 +23,4 @@ const seperateString = (obj: IObj1["attr"]) => {
   return new_obj;
 };
 
-const seperateString1 = (obj: IObj1["attr"]): IObj1["attr"] => {
-  const new_obj: IObj1["attr"] = {};
-  for (const key in obj) {
-    new_obj[key] = obj[key].replace(/,(?=[^\s])/g, ", ");
-  }
-  return new_obj;
-};
-
 console.log(seperateString(attributes));
-console.log(seperateString1(attributes));
