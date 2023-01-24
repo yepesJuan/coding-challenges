@@ -1,8 +1,8 @@
 // There is a collection of input strings and a collection of query strings. For each query string,
 // determine how many times it occurs in the list of input strings. Return an array of the results.
 // Example
-const strings = ['ab', 'ab', 'abc']
-const query = ['ab','abc','bc']
+const strings = ["ab", "ab", "abc"];
+const query = ["ab", "abc", "bc"];
 
 function matchingStrings(strings, queries) {
   let ret = [];
@@ -12,7 +12,8 @@ function matchingStrings(strings, queries) {
   });
   return ret;
 }
-console.log(matchingStrings(strings,query))
+console.log(matchingStrings(strings, query));
+
 // function matchingStrings(strings, queries) {
 //     let temp =[];
 //     const ret = [];
@@ -25,18 +26,18 @@ console.log(matchingStrings(strings,query))
 //     return ret
 // }
 
-function matchingStrings(strings, queries) {
-    let result = []
-    for(let i = 0; i < queries.length; i++) {
-        let count = 0
-        for(let j = 0; j < strings.length; j++) {
-            if(queries[i] === strings[j] ) {
-            count++
-        }
-        }
-        result.push(count)
+function matchingStrings2(strings, queries) {
+  let result = [];
+  for (let i = 0; i < queries.length; i++) {
+    let count = 0;
+    for (let j = 0; j < strings.length; j++) {
+      if (queries[i] === strings[j]) {
+        count++;
+      }
     }
-    return result;
+    result.push(count);
+  }
+  return result;
 }
 
-console.log(matchingStrings(strings,query))
+console.log(matchingStrings2(strings, query));

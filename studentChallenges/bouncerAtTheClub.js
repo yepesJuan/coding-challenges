@@ -1,4 +1,4 @@
-// Club opened at 7pm
+//Coding challenge for students
 //  ------>   7   8   9   10  11  12   1   2   3  4
 const init = [36, 44, 23, 39, 48, 56, 38, 14, 12, 0];
 const out = [12, 16, 21, 24, 18, 33, 94, 60, 10, 15];

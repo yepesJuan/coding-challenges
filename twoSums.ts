@@ -33,3 +33,5 @@ const twoSum = (arr: number[], target: number) => {
   return result;
 };
 twoSum(array, target);
+
+export {};

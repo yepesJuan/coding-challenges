@@ -1,3 +1,4 @@
+// A helper method that modifies a string by adding a space after a comma.
 interface IObj1 {
   attr: {
     [key: string]: string;
@@ -12,7 +13,7 @@ const attributes = {
 };
 
 const addSpacetoComma = (str: string): string => {
-  return str.replace(/,(?=[^\s])/g, ", "); // regex or regular expression
+  return str.replace(/,(?=[^\s])/g, ", ");
 };
 
 const seperateString = (obj: IObj1["attr"]) => {

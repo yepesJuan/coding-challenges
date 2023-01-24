@@ -1,5 +1,5 @@
-const target = 6;
-const array = [1, 2, 3];
+const target = 18;
+const array = [1, 2, 3, 8, 0, 10];
 
 // const threeSums = (arr, target) => {
 //   let result = [];
@@ -33,7 +33,7 @@ const array = [1, 2, 3];
 
 /**************************************************/
 
-var threeSum = function (array, target) {
+const threeSum = function (array, target) {
   array.sort((a, b) => a - b);
   const triplets = [];
 

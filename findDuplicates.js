@@ -1,10 +1,11 @@
+//returns the total number of duplicates for each number
 const a = [1, 2, 3, 3, 5, 5, 5, 2, 2, 2];
 /******************* Map *************************/
-function countDuplicate(a) {
+function countDuplicates(arr) {
   let bucket = {};
-  a.forEach((item) => {
-    bucket[item] ? bucket[item] += 1 : bucket[item] = 1
-  })
+  arr.forEach((item) => {
+    bucket[item] ? (bucket[item] += 1) : (bucket[item] = 1);
+  });
 
   const index = Object.keys(bucket).find(
     (key) => bucket[key] === Math.max(...Object.values(bucket))
@@ -13,13 +14,13 @@ function countDuplicate(a) {
   for (let key in bucket) {
     console.log(key + " counted: " + bucket[key] + " times.");
   }
-  console.log(index + " is the mode");
+  console.log("The mode is", index);
 }
-countDuplicate(a);
+countDuplicates(a);
 
 /******************* Reduce *************************/
 const a1 = [65, 65, 21, 53, 321, 321, 1, 1, 1, 1];
-function modearray(array) {
+function findMode(array) {
   let count = {};
   for (const element of array) {
     if (count[element]) {
@@ -31,4 +32,4 @@ function modearray(array) {
   return Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
 }
 
-console.log(modearray(a1));
+console.log("*************\nThe mode is", findMode(a1));

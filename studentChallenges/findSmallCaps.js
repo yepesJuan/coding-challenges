@@ -11,16 +11,18 @@
 const word1 = "aaHeEaLLaaaO";
 const word2 = "BxxOxxCxxAx xCxxOxxxDxxE";
 
-const answer = word1.replace(/[a-z]/g, "").slice();
-console.log(answer);
+// *****************************
+const answer1 = word1.replace(/[a-z]/g, "").slice();
+console.log(answer1);
 
+// *****************************
 console.log(
   word2
     .split("")
     .filter((e) => e === e.toUpperCase())
     .join("")
 );
-
+// *****************************
 function detectWord(arr) {
   let letter = "";
   for (let i = 0; i < arr.length; i++) {
@@ -30,5 +32,4 @@ function detectWord(arr) {
   }
   return letter;
 }
-// console.log(detectWord(word1));
-// console.log(detectWord(word2)); // toUpperCase
+console.log(detectWord(word1));

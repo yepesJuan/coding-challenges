@@ -1,36 +1,5 @@
-const squareRoot = (num) => {
-  if (num === 1) {
-    return 1;
-  }
-  if (num < 4) {
-    return "Only works with perfect square natural postive numbers only, try again";
-  }
-  for (let i = 0; i <= num / 2; i++)
-    if (i * i === num) {
-      return i;
-    }
-};
-
-console.log(squareRoot(2));
-
-const square = (n, i, j) => {
-  let mid = (i + j) / 2;
-  let mul = mid * mid;
-  if (mul === n || Math.abs(mul - n) < 0.00001) {
-    return mid;
-  } else if (mul < n) {
-    return square(n, mid, j);
-  } else {
-    return square(n, i, mid);
-  }
-};
-
-12 = 3 * 3
-12 = 4 * 4
-3.46
-
-// Function to find the square root of n
-const findSqrt = (num) => {
+// finds the square root of any number
+const findSquareRoot = (num) => {
   let i = 1;
   const found = false;
   while (!found) {
@@ -44,6 +13,33 @@ const findSqrt = (num) => {
     i++;
   }
 };
-console.log(findSqrt(33));
+console.log(findSquareRoot(35));
 
-10 
+function square(n, i, j) {
+  let mid = (i + j) / 2;
+  let mul = mid * mid;
+  if (mul === n || Math.abs(mul - n) < 0.00001) {
+    return mid;
+  } else if (mul < n) {
+    return square(n, mid, j);
+  } else {
+    return square(n, i, mid);
+  }
+}
+
+/********************************************** */
+// finds perfect squares only
+const squareRoot = (num) => {
+  if (num === 1) {
+    return 1;
+  }
+  if (num < 4) {
+    return "Only works with perfect square natural postive numbers only, try again";
+  }
+  for (let i = 0; i <= num / 2; i++)
+    if (i * i === num) {
+      return i;
+    }
+};
+
+console.log(squareRoot(9));

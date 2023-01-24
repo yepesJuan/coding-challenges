@@ -1,4 +1,4 @@
-//  create a function that takes an array of numbers & return both min and max in that order. (use a loop)
+//  create a function that takes an array of numbers & return both min and max in that order
 function findMinAndMax(array) {
   let [min] = array;
   let [max] = array;

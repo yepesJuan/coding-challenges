@@ -12,15 +12,10 @@ let arr1 = [
 
 function printDiagnal(arr) {
   let res1 = 0;
-
   for (let i = 0; i < arr.length; i++) {
     res1 = arr[i][i];
-
-    // res3 = arr[i + 2][i + 2];
-
     console.log(res1);
   }
-  // console.log(res1[0]);
 }
 
 printDiagnal(arr1);
