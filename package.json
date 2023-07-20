@@ -1,8 +1,24 @@
 {
+  "name": "codingchallenges",
+  "version": "1.0.0",
+  "description": "src/studentChallenges --> begginer level coding challenges src/sortingAlgo --> sorting algorithms  src/dataStructures --> data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yepesJuan/coding-challenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yepesJuan/coding-challenges/issues"
+  },
+  "homepage": "https://github.com/yepesJuan/coding-challenges#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.35.1",
-    "@typescript-eslint/parser": "^5.35.1",
-    "eslint": "^8.23.0",
-    "prettier": "^2.7.1"
+    "typescript": "^5.1.6"
   }
 }

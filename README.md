@@ -1,3 +1,5 @@
 ## Coding-Challenges
-Low to Mid level coding challenges using JavaScript.\
-Adding some High level ones soon.
+src/studentChallenges --> begginer level coding challenges
+src/sortingAlgo --> sorting algorithms 
+src/dataStructures --> data structures
+
