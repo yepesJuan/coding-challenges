@@ -1,6 +1,6 @@
 // 0 1 1 2 3 5 8 13 21 34
 // iteration
-function fibonacci2(n) {
+function fibonacci2(n: number) {
   if (n < 2) {
     console.log(n);
   }
@@ -18,7 +18,7 @@ function fibonacci2(n) {
 fibonacci2(9);
 
 // recursive
-function fibonacci(n) {
+function fibonacci(n: number) {
   if (n < 2) {
     return n;
   }

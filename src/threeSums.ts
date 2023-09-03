@@ -33,7 +33,7 @@ const array = [1, 2, 3, 8, 0, 10];
 
 /**************************************************/
 
-const threeSum = function (array, target) {
+const threeSum = (array: number[], target: number) => {
   array.sort((a, b) => a - b);
   const triplets = [];
 

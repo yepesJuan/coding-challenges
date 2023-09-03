@@ -1,5 +1,5 @@
 // finds the square root of any number
-const findSquareRoot = (num) => {
+const findSquareRoot = (num: number) => {
   let i = 1;
   const found = false;
   while (!found) {
@@ -15,7 +15,7 @@ const findSquareRoot = (num) => {
 };
 console.log(findSquareRoot(35));
 
-function square(n, i, j) {
+function square(n: number, i: number, j: number) {
   let mid = (i + j) / 2;
   let mul = mid * mid;
   if (mul === n || Math.abs(mul - n) < 0.00001) {
@@ -29,7 +29,7 @@ function square(n, i, j) {
 
 /********************************************** */
 // finds perfect squares only
-const squareRoot = (num) => {
+const squareRoot = (num: number) => {
   if (num === 1) {
     return 1;
   }

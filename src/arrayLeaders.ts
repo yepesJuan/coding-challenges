@@ -7,8 +7,8 @@
 const elements = [16, 17, 4, 3, 5, 2];
 // answer = 17, 5 , 2
 
-const arrayLeaders = (arr) => {
-  const result = [];
+const arrayLeaders = (arr: number[]) => {
+  const result: number[] = [];
   let maxRight = arr[arr.length - 1];
 
   result.push(maxRight);

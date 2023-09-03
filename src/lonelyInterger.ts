@@ -11,20 +11,20 @@
 
 // lonelyInteger([-9, -105, -9, -9, -9, -9, 105]) ➞ -9
 
-function lonelyInteger(arr) {
+function lonelyInteger(arr: number[]) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
       if (arr[i] == -arr[j]) {
         break;
-      } 
+      }
       if (j == arr.length - 1) {
         return arr[i];
       }
     }
-  } 
+  }
 }
-let arr = [-9, -105, -9, -9, 6, -9, 9, 105]
+let arr = [-9, -105, -9, -9, 6, -9, 9, 105];
 
-console.time()
+console.time();
 console.log(lonelyInteger(arr));
-console.timeEnd()
+console.timeEnd();
