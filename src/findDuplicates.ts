@@ -19,7 +19,7 @@ function countDuplicates(arr: number[]) {
 countDuplicates(a);
 
 /******************* Reduce *************************/
-const a1 = [65, 65, 21, 53, 321, 321, 1, 1, 1, 1];
+const a1 = [65, 65, 21, 53, 321, 321, 1, 1, 1];
 function findMode(array: number[]) {
   const count: { [key: number]: number } = {};
   for (const element of array) {
