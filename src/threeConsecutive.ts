@@ -23,6 +23,8 @@ export const minimumMovesToAvoidThreeConsecutive = (S: string): number => {
   let count = 1;
 
   for (let i = 0; i < S.length - 1; i++) {
+    const d = S[i];
+    const e = S[i + 1];
     if (S[i] === S[i + 1]) {
       count++;
     } else {
@@ -36,18 +38,11 @@ export const minimumMovesToAvoidThreeConsecutive = (S: string): number => {
   if (count >= 3) {
     moves += Math.floor(count / 3);
   }
-  
+
   return moves;
 };
 
 // Example usage:
-const input1 = "baaaaa";
-const input2 = "baaabbaabbba";
-const input3 = "aaabbbccc";
-const input4 = "aaabbbb";
+const input = "aaabbbaaa";
 
-console.log(minimumMovesToAvoidThreeConsecutive(input1)); // Output: 1
-console.log(minimumMovesToAvoidThreeConsecutive(input2)); // Output: 2
-console.log(minimumMovesToAvoidThreeConsecutive(input3)); // Output: 3
-console.log(minimumMovesToAvoidThreeConsecutive(input4)); // Output: 2
-
+console.log(minimumMovesToAvoidThreeConsecutive(input)); // Output: 5
