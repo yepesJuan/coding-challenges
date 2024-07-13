@@ -20,6 +20,6 @@ describe('minTest', () => {
 
   it('should handle strings with longer segments of consecutive characters', () => {
     expect(minTest('aaabbbccc')).toBe(3); // Three segments of 'aaa', 'bbb', 'ccc'
-    expect(minTest('aabbaabb')).toBe(2); // Two segments of 'aa' and 'bb'
+    expect(minTest('aabbaabb')).toBe(0); // Two segments of 'aa' and 'bb'
   });
 });

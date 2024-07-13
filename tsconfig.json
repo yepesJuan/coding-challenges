@@ -4,9 +4,10 @@
     "skipLibCheck": true,
     "target": "ES2022",
     "allowJs": true,
+    "outDir": "./dist",
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
+    "moduleDetection": "force"
   },
-  "include": ["src/*"]
+  "include": ["src/*"],
+  "ignore": ["node_modules", "dist"]
 }
