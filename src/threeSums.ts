@@ -47,8 +47,9 @@ const threeSum = (array: number[], target: number) => {
         let currentSum = array[i] + array[left] + array[right];
         if (currentSum === target) {
           triplets.push([array[i], array[left], array[right]]);
+          // making sure our solution set does not contain duplicate triplets
           while (array[left] == array[left + 1]) left++;
-          while (array[right] == array[right - 1]) right--; // making sure our solution set does not contain duplicate triplets
+          while (array[right] == array[right - 1]) right--; 
           left++;
           right--;
         } else if (currentSum < target) {

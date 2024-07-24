@@ -23,8 +23,6 @@ export const minimumMovesToAvoidThreeConsecutive = (S: string): number => {
   let count = 1;
 
   for (let i = 0; i < S.length - 1; i++) {
-    const d = S[i];
-    const e = S[i + 1];
     if (S[i] === S[i + 1]) {
       count++;
     } else {

@@ -6,13 +6,13 @@ const target = 17;
 const array = [2, 6, 3, 1, 0, 8, 9, 3];
 
 const fastTwoSum = (arr: number[], _target: number): void => {
-  const map: Record<number, number> = {};
-  for (let i = 0; i < arr.length; i++) {
-    const difference = _target - arr[i];
-    if (map[difference] !== undefined) {
-      console.log(arr[map[difference]], "+", arr[i], "=", _target); // arr[1] + arr[3] = target
+  const map: Record<number, boolean> = {};
+  for (let num of arr) {
+    const difference = _target - num;
+    if (map[difference]) {
+      console.log(difference, "+", num, "=", _target); // arr[1] + arr[3] = target
     }
-    map[arr[i]] = i;
+    map[num] = true;
   }
 };
 console.time();
@@ -24,7 +24,7 @@ function fastTwoSum2(nums: number[], target: number) {
   for (let i = 0; i < nums.length; i++) {
     const complement = target - nums[i];
     if (map.has(complement)) {
-      return [map.get(complement), i];
+      return [complement, nums[i]];
     }
     map.set(nums[i], i);
   }
