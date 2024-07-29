@@ -3,7 +3,7 @@
 // that add up to the target value
 
 const target = 17;
-const array = [2, 6, 3, 1, 0, 8, 9, 3];
+const array = [2, 6, 3, 1, 0, 8, 9, 4]
 
 const fastTwoSum = (arr: number[], _target: number): void => {
   const map: Record<number, boolean> = {};
