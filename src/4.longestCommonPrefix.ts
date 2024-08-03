@@ -15,17 +15,14 @@ function longestCommonPrefix(strs: string[]): string {
 
 function longestCommonPrefixVertical(strs: string[]): string {
   if (strs.length === 0) return "";
+  
   const minLength = Math.min(...strs.map((str) => str.length));
 
   for (let i = 0; i < minLength; i++) {
     const char = strs[0][i];
     for (let j = 1; j < strs.length; j++) {
-      const a = strs[j];
-      const b = strs[j][i];
       if (strs[j][i] !== char) {
-        const c = strs[0].slice(0, i);
-        const d = 0;
-        return c;
+        return strs[0].slice(0, i);
       }
     }
   }
@@ -33,4 +30,4 @@ function longestCommonPrefixVertical(strs: string[]): string {
   return strs[0].slice(0, minLength);
 }
 
-console.log(longestCommonPrefixVertical(["flower", "flow", "flight"]));
+console.log(longestCommonPrefixVertical(["flower", "flowy", "flight"]));
