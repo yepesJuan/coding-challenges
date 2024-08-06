@@ -1,21 +1,20 @@
-// given an array and a target..
-// find the only two numbers in the array
-// that add up to the target value
+// Given an array of integers nums and an integer target, return indices of the two numbers that add up to target.
+// You may assume that each input would have exactly one solution.
 
 const target = 17;
 const array = [2, 6, 8, 4, 9];
 
 const fastTwoSum = (arr: number[], _target: number): number[] => {
-  let index = 0 
+  let index = 0;
   const map: Record<number, number> = {};
   for (let num of arr) {
     const difference = _target - num;
     if (map[difference]) {
       console.log(difference, "+", num, "=", _target); // arr[1] + arr[3] = target
-      return [map[difference], index]
+      return [map[difference], index];
     }
     map[num] = index;
-    index++
+    index++;
   }
 };
 console.log(fastTwoSum(array, target));
@@ -33,20 +32,21 @@ function fastTwoSum2(nums: number[], target: number) {
 }
 console.log("index", fastTwoSum2(array, target));
 /************************************************************************** */
+// 2, 6, 8, 4, 9          (17)
 const twoSum = (arr: number[], target: number) => {
   const result: number[] = [];
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
+  for (let i = 0; i < arr.length - 2; i++) {
+    for (let j = 1; j < arr.length - 1; j++) {
       if (arr[i] + arr[j] === target) {
-        result[0] = arr[i];
-        result[1] = arr[j];
+        result[0] = i;
+        result[1] = j;
       }
     }
   }
   return result;
 };
-console.time();
-// console.log(twoSum(array, target));
-console.timeEnd();
-
+// console.time();
+console.log(twoSum(array, target));
+// console.timeEnd();
+console.log(4 < 4);
 export {};
