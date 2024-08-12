@@ -41,6 +41,6 @@ export const minimumMovesToAvoidThreeConsecutive = (S: string): number => {
 };
 
 // Example usage:
-const input = "aaabbbaaa";
+const input = "baaaab";
 
 console.log(minimumMovesToAvoidThreeConsecutive(input)); // Output: 5
