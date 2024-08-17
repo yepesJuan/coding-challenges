@@ -1,9 +1,9 @@
 const numbers = [10, 10, 20, 30, 30, 20];
 
 // 1.
-const filteredNumbers = numbers.filter((number, index) => {
-  return numbers.indexOf(number) == index;
-});
+const filteredNumbers = numbers.filter(
+  (number, index) => numbers.indexOf(number) == index
+);
 console.log({ filteredNumbers });
 //****************************************************** */
 
