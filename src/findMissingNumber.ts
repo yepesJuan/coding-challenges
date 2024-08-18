@@ -15,7 +15,7 @@
 // const chloesPhoneNumber = [9, 5, 4, 9, 1, 8, 7, 4, 2, 3]; // 9, 4, 8,
 // const juansPhoneNumber = [3, 2, 3, 5, 5, 7, 5, 7, 1, 5]; //
 
-const arr1 = [1, 2, 3, 4, 5]; // 4
+const arr1 = [1, 2, 3, 4, 5,4]; // 4
 const arr2 = [3, 5, 2, 0, 1]; //0
 
 const findMissingNums = (arr1: number[], arr2: number[]) => {
@@ -33,14 +33,8 @@ const findMissingNums = (arr1: number[], arr2: number[]) => {
     if (!flag) notinarr1.push(arr1[i]);
   }
 
-  return notinarr1;
-  // const notInArr2 = arr2.filter((num) => !arr1.includes(num));
+  const notInArr2 = arr2.filter((num) => !arr1.includes(num));
+  return [...new Set(notinarr1), ...notInArr2];
 
-  // console.log(notInArr1, notInArr2);
-
-  // const a = new Set(notInArr1),
-  //   b = new Set(notInArr2);
-
-  // return [Array.from(a), Array.from(b)];
 };
 console.log(findMissingNums(arr1, arr2));

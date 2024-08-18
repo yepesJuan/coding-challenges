@@ -8,7 +8,7 @@ function firstUniqChar(s: string): number {
     occurences.set(s[i], index); // we can use this (occurences.get(s[i]) || 0) + 1) instead of index to keep track of occurences value
     index = 1;
   }
-  console.log(occurences);
+
 
   for (let i = 0; i < s.length; i++) {
     if (occurences.get(s[i]) == 1) return i;
@@ -16,7 +16,7 @@ function firstUniqChar(s: string): number {
   return -1;
 }
 
-console.log(firstUniqChar("leetcode"))
+// console.log(firstUniqChar("leetcode"))
 console.log(firstUniqChar("loveleetcode"))
 console.log(firstUniqChar("aaaav"))
 
@@ -66,9 +66,9 @@ function firstUniqChar3(s: string): number {
   
   // chars array after first pass with example s = "sams":
   // 'a': 1 (index 0)
-  // 'm': 2 (index 12)
+  // 'm': 1 (index 12)
   // 's': 2 (index 18)
-  // chars = [1, 0, 0, ..., 0, 2, 0, ..., 2, 0] (26 positions)
+  // chars = [1, 0, 0, ..., 0, 1, 0, ..., 2, 0] (26 positions)
   
   // Second pass: Find the first unique character
   for (let i = 0; i < n; i++) {
