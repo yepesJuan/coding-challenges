@@ -3,9 +3,10 @@
 // Space complexity 0(1)
 function bubbleSort(array) {
   let done = false;
+  let n = array.length;
   while (!done) {
     done = true;
-    for (let i = 1; i < array.length; i++) {
+    for (let i = 1; i < n; i++) {
       // checking to see if its sorted
       if (array[i - 1] > array[i]) {
         done = false; // is not sorted yet so lets SWAP current element with the next one
@@ -14,12 +15,13 @@ function bubbleSort(array) {
         array[i] = temp;
       }
     }
+    n--;
   }
 
   return array;
 }
 
-let numbers = [10, 2, 100, 56, 3, 6];
+const numbers = [10, 2, 100, 56, 3, 6];
 console.log(bubbleSort(numbers));
 
 function bubbleSort2(array) {
@@ -38,5 +40,5 @@ function bubbleSort2(array) {
   return array;
 }
 
-let numbers2 = [4, 5, 3, 0, 15, 5];
-console.log(bubbleSort2(numbers2));
+// const numbers2 = [4, 5, 3, 0, 15, 5];
+// console.log(bubbleSort2(numbers2));

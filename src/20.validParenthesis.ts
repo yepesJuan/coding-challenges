@@ -5,9 +5,6 @@
 // Open brackets must be closed by the same type of brackets.
 // Open brackets must be closed in the correct order.
 // Every close bracket has a corresponding open bracket of the same type.
- 
-
-// Example 1:
 
 // Input: s = "()"
 // Output: true
@@ -48,6 +45,7 @@ function isValid2(s: string): boolean {
   for (let i = 0; i < s.length; i++) {
       const currentBracket = s[i]
 
+
       if (['(', '[', '{'].includes(currentBracket)) {
           openBracketsStack.push(currentBracket)
       } else if (openBracketsStack.pop() !== bracketsMap[currentBracket]) {
@@ -56,3 +54,5 @@ function isValid2(s: string): boolean {
   }
   return !openBracketsStack.length
 };
+
+console.log(isValid2("({})"));

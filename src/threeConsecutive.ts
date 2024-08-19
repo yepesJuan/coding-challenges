@@ -41,6 +41,28 @@ export const minimumMovesToAvoidThreeConsecutive = (S: string): number => {
 };
 
 // Example usage:
-const input = "baaaab";
+const input = "aaabbbaaaaaa";
 
 console.log(minimumMovesToAvoidThreeConsecutive(input)); // Output: 5
+
+function solution(S: string): number {
+  let moves = 0;
+  let i = 0;
+
+  while (i < S.length) {
+      // Check if we have three consecutive identical letters
+      if (i + 2 < S.length && S[i] === S[i + 1] && S[i] === S[i + 2]) {
+          moves++;
+          // Skip past the current sequence of three identical letters
+          i += 3;
+      } else {
+          i++;
+      }
+  }
+
+  return moves;
+}
+
+// Example usage
+const S = "aaabbbaaaaa";
+console.log(solution(S)); 

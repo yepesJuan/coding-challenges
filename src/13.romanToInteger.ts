@@ -29,8 +29,7 @@ function romanToInt(s: string): number {
   return result;
 }
 
-// console.log(romanToInt("LVIII"));
-// console.log(romanToInt("MCMXCIV"));
+console.log(romanToInt("LVIII"));
 
 // In this function nextValue determines if the current numeral should be sub or add
 function romanToInt2(s: string): number {
