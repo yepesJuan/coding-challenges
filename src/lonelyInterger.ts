@@ -23,8 +23,22 @@ function lonelyInteger(arr: number[]) {
     }
   }
 }
-let arr = [-9, -105, -9, -9, 6, -9, 9, 105];
+const arr = [-9, -105, -9, -9, 6, -9, 9, 105];
 
 console.time();
 console.log(lonelyInteger(arr));
 console.timeEnd();
+
+function lonelyInteger2(arr: number[]) {
+  const occurences = new Map()
+  const abs = arr.map((num) => Math.abs(num));
+
+  for (const item of abs) {
+    occurences.set(item, (occurences.get(item) || 0) + 1 )
+  }
+  for(let [key, value] of occurences.entries()) {
+    if(value == 1) return [key, value]
+  }
+}
+
+console.log(lonelyInteger2(arr));

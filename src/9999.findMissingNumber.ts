@@ -7,13 +7,6 @@ const findDifference = (nums1: number[], nums2: number[]): number[][] => {
   const diff1 = [...a].filter((num) => !b.has(num));
   const diff2 = [...b].filter((num) => !a.has(num));
 
-  console.log(nums1)
-  console.log(diff1)
-  console.log(nums1.map((num, index) => (diff1.includes(num) ? index : -1)))
-
-  const indicesDiff1 = nums1.map((num, index) => (diff1.includes(num) ? index : -1)).filter(index => index !== -1); 
-  console.log(indicesDiff1)
-
   return [diff1, diff2];
 };
 

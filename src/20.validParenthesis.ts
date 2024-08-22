@@ -1,4 +1,4 @@
-// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', 
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 // determine if the input string is valid.
 
 // An input string is valid if:
@@ -8,21 +8,20 @@
 
 // Input: s = "()"
 // Output: true
-// Example 2:
 
 // Input: s = "()[]{}"
 // Output: true
-// Example 3:
 
 // Input: s = "(]"
 // Output: false
 
 const isValid = (string: string): boolean => {
-  if (string.length % 2 === 0) return false;
+  if (string.length % 2 !== 0) return false;
   const map: { [key: string]: string } = { "(": ")", "{": "}", "[": "]" };
   const stack: string[] = [];
   for (const char of string) {
     if (map[char]) {
+      console.log(char);
       stack.push(char);
     } else if (char !== map[stack[stack.length - 1]]) return false;
     else stack.pop();
@@ -30,29 +29,47 @@ const isValid = (string: string): boolean => {
   return stack.length === 0;
 };
 
-console.log(isValid("({}){"));
+console.log(isValid("({})"));
 
 function isValid2(s: string): boolean {
-
   const bracketsMap = {
-      ')': '(',
-      ']': '[',
-      '}': '{'
-  }
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
 
-  let openBracketsStack = []
+  const stack = [];
 
   for (let i = 0; i < s.length; i++) {
-      const currentBracket = s[i]
+    const currentBracket = s[i];
 
-
-      if (['(', '[', '{'].includes(currentBracket)) {
-          openBracketsStack.push(currentBracket)
-      } else if (openBracketsStack.pop() !== bracketsMap[currentBracket]) {
-          return false
-      }
+    if (["(", "[", "{"].includes(currentBracket)) stack.push(currentBracket);
+    else if (stack.pop() !== bracketsMap[currentBracket]) return false;
   }
-  return !openBracketsStack.length
-};
+  return stack.length == 0;
+}
 
-console.log(isValid2("({})"));
+console.log(isValid2("({[{}]})"));
+
+function isValid3(s: string) {
+
+  const map = new Map([
+    ["(", ")"],
+    ["{", "}"],
+    ["[", "]"],
+  ]);
+
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (map.has(s[i])) {
+      stack.push(s[i]);
+    } else {
+      const last = stack.pop();
+      if (last === undefined || map.get(last) !== s[i]) return false;
+    }
+  }
+  return stack.length == 0;
+}
+
+console.log(isValid3("[]"));

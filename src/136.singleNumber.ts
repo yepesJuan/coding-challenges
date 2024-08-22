@@ -1,3 +1,5 @@
+//Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
 function singleNumber(nums: number[]): number {
   const map = new Map();
   let index = 1;
@@ -7,10 +9,16 @@ function singleNumber(nums: number[]): number {
     index = 1;
   }
 
+  // for(const key of map.keys()) {
+  //   if(map.get(key) == 1) return key
+  // }
+
   for (let i = 0; i < nums.length; i++) {
     if (map.get(nums[i]) == 1) return nums[i];
   }
 }
+
+console.log(singleNumber([1, 2, 3, 4, 1, 2, 3]));
 
 function singleNumber2(nums: number[]): number {
   if (nums.length === 1) {

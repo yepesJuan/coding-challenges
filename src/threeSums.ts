@@ -1,35 +1,21 @@
 const target = 18;
 const array = [1, 2, 3, 8, 0, 10];
 
-// const threeSums = (arr, target) => {
-//   let result = [];
+const threeSums = (arr, target) => {
 
-//   for (let i = 0; i < arr.length; i++) {
-//     for (let j = i + 1; j < arr.length; j++) {
-//       for (let k = j + 1; k < arr.length; k++) {
-//         if (arr[i] + arr[j] + arr[k] === target) {
-//           result[0] = arr[i];
-//           result[1] = arr[j];
-//           result[2] = arr[k];
-//         }
-//       }
-//     }
-//   }
-//   return result;
-// };
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      for (let k = j + 1; k < arr.length; k++) {
+        if (arr[i] + arr[j] + arr[k] === target) {
+         return [arr[i], arr[j], arr[k]]
+        //  return [i,j,k]
+        }
+      }
+    }
+  }
+};
 
-//let output = threeSums(array, target);
-
-// console.log(
-//   "Target =",
-//   target,
-//   ", Compliments =",
-//   output[0],
-//   "&",
-//   output[1],
-//   "&",
-//   output[2]
-// );
+console.log(threeSums(array, target));
 
 /**************************************************/
 
@@ -38,7 +24,7 @@ const threeSum = (array: number[], target: number) => {
   const triplets = [];
 
   for (let i = 0; i < array.length - 2; i++) {
-    if (array[i] != array[i - 1]) {
+    // if (array[i] != array[i - 1]) {
       // making sure our solution set does not contain duplicate triplets
       let left = i + 1;
       let right = array.length - 1;
@@ -48,8 +34,8 @@ const threeSum = (array: number[], target: number) => {
         if (currentSum === target) {
           triplets.push([array[i], array[left], array[right]]);
           // making sure our solution set does not contain duplicate triplets
-          while (array[left] == array[left + 1]) left++;
-          while (array[right] == array[right - 1]) right--; 
+          // while (array[left] == array[left + 1]) left++;
+          // while (array[right] == array[right - 1]) right--; 
           left++;
           right--;
         } else if (currentSum < target) {
@@ -57,7 +43,7 @@ const threeSum = (array: number[], target: number) => {
         } else if (currentSum > target) {
           right--;
         }
-      }
+      // }
     }
   }
   return triplets;

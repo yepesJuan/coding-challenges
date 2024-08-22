@@ -14,6 +14,7 @@ const fastTwoSum = (arr: number[], _target: number): number[] => {
       return [map[difference], index];
     }
     map[num] = index;
+    console.log(map)
     index++;
   }
 };
@@ -34,44 +35,37 @@ console.log("using new map: ", fastTwoSum2(array, target));
 /************************************************************************** */
 // 2, 6, 8, 4, 9          (17)
 const slowTwoSum = (arr: number[], target: number) => {
-  const result: number[] = [];
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = 1; j < arr.length; j++) {
       // cant use the same number ex. [1,3,4,2] 3+3=6 but 4+2=6
-      if (arr[i] + arr[j] === target && i != j) {
-        result[0] = i;
-        result[1] = j;
-        break; // one found we can break
-      }
-      if (result.length) break; // once found we can break
+      if (arr[i] + arr[j] === target && i != j) return [i, j];
     }
   }
-  return result;
 };
 console.log("slow n^2: ", slowTwoSum(array, target));
 /************************************************************************** */
 const twoSum = (arr: number[], target: number) => {
   // we make a copy of the array and save the index to reflect back on the original arr to get answer
   // we couldve use slice, [...arr], or Array.from() to make shallow copy but the index wouldnt align with original copy
-  const copy  =  arr.map((value, index) => ({ value, index })); 
-  copy.sort((a,b) => a.value - b.value)
-  console.log(copy)
+  const copy = arr.map((value, index) => ({ value, index }));
+  copy.sort((a, b) => a.value - b.value);
+  console.log(copy);
 
-let left = 0
-let right = copy.length-1
+  let left = 0;
+  let right = copy.length - 1;
 
-while(left < right) {
-  let curr = copy[left].value + copy[right].value
-  if(curr == target) {
-  return [copy[left].index, copy[right].index]
+  while (left < right) {
+    let curr = copy[left].value + copy[right].value;
+    if (curr == target) {
+      return [copy[left].index, copy[right].index];
+    }
+    if (curr < target) left++;
+    if (curr > target) right--;
   }
-if(curr < target) left++
-if(curr > target) right--
-}
 };
-console.log("shallow copy nlogn:", twoSum(array, target))
+console.log("shallow copy nlogn:", twoSum(array, target));
 /************************************************************************** */
-const sortedArr = [1,2,3,4,5,6,7,8,9];
+const sortedArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function sorted(arr, target) {
   let left = 0;
   let right = arr.length - 1;

@@ -7,6 +7,8 @@ function countDuplicates(arr: number[]) {
     bucket[item] ? (bucket[item] += 1) : (bucket[item] = 1);
   });
 
+  console.log(bucket)
+
   const index = Object.keys(bucket).find(
     (key) => bucket[key] === Math.max(...Object.values(bucket))
   );
@@ -32,4 +34,16 @@ function findMode(array: number[]) {
   return Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
 }
 
-console.log("*************\nThe mode is", findMode(a1));
+console.log("************* \n The mode is", findMode(a1));
+
+function findMod(a){
+  const occurences = new Map()
+
+  for(const num of a) {
+    occurences.set(num, (occurences.get(num) || 0) + 1)
+  }
+  for(const key of occurences.keys()){
+    if( occurences.get(key) == Math.max(...occurences.values())) return key
+  }
+}
+console.log(findMod(a))

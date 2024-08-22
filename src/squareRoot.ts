@@ -13,12 +13,12 @@ const findSquareRoot = (num: number) => {
     i++;
   }
 };
-console.log(findSquareRoot(35));
+console.log(findSquareRoot(17));
 
 function square(n: number, i: number, j: number) {
   let mid = (i + j) / 2;
   let mul = mid * mid;
-  if (mul === n || Math.abs(mul - n) < 0.00001) {
+  if (mul === n || Math.abs(mul - n) < 0.001) {
     return mid;
   } else if (mul < n) {
     return square(n, mid, j);
@@ -42,4 +42,26 @@ const squareRoot = (num: number) => {
     }
 };
 
-console.log(squareRoot(9));
+// console.log(squareRoot(9));
+
+function mySqrt(x: number): number {
+  let start = 0
+  let end = x
+
+  while (start <= end) {
+    const mid = Math.floor((start + end) / 2)
+    const midSquared = mid * mid
+
+    if (midSquared === x) {
+      return mid
+    } else if (midSquared < x) {
+      start = mid + 1
+    } else {
+      end = mid - 1
+    }
+  }
+
+  return end
+};
+
+mySqrt(8)
