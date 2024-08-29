@@ -1,3 +1,4 @@
+// AMEX
 // Given a string 𝑆 consisting of 𝑁 letters 'a' and 'b', you can replace any letter with its counterpart ('a' with 'b' or 'b' with 'a') in one move.
 // The goal is to determine the minimum number of moves required to transform S into a string that contains no instances of three consecutive identical letters.
 
