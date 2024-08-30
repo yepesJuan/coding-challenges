@@ -17,8 +17,6 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
 
   // Step 3: Traverse and compare
   while (list1 !== null && list2 !== null) {
-    let o = list1.val
-    let t = list2.val
       if (list1.val <= list2.val) {
           current.next = list1;
           list1 = list1.next;
@@ -26,7 +24,6 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
           current.next = list2;
           list2 = list2.next;
       }
-      let c = current.val
       current = current.next;
   }
 
@@ -34,7 +31,6 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
   if (list1 !== null) {
       current.next = list1;
   } else {
-    console.log(list2)
       current.next = list2;
   }
   // Step 5: Return the merged list
@@ -49,7 +45,32 @@ let list2 = new ListNode(2, new ListNode(4, new ListNode(6)));
 const mergedList = mergeTwoLists(list1, list2);
 printList(mergedList);
 
-// Helper function to print the linked list without arrows
+// **************************************************
+
+//Recursive 
+function mergeTwoListsRecursive(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+  if (!l1) return l2;
+  if (!l2) return l1;
+
+  let merged: ListNode;
+
+  if (l1.val < l2.val) {
+      merged = new ListNode(l1.val, mergeTwoLists(l1.next, l2));
+  } else {
+      merged = new ListNode(l2.val, mergeTwoLists(l1, l2.next));
+  }
+
+  return merged;
+};
+
+let list3 = new ListNode(7, new ListNode(9, new ListNode(11)));
+let list4 = new ListNode(8, new ListNode(10, new ListNode(12)));
+
+const mergedListRecursive = mergeTwoListsRecursive(list3, list4);
+printList(mergedListRecursive);
+
+// ********************************************
+// Helper function to print the linked list
 function printList(head: ListNode | null): void {
   let current = head;
   const values: number[] = [];
