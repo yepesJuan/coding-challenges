@@ -1,4 +1,4 @@
-// AMEX
+//
 // answer[0] is a list of all distinct integers in nums1 which are not present in nums2.
 // answer[1] is a list of all distinct integers in nums2 which are not present in nums1. done
 
@@ -16,7 +16,7 @@ console.log(findDifference([1, 2, 3, 4, 5], [1, 2, 3, 0, 5])); // 4, 0
 
 //****************************************************************** */
 
-const arr1 = [1, 2, 3, 4, 5,4]; // 4
+const arr1 = [1, 2, 3, 4, 5, 4]; // 4
 const arr2 = [3, 5, 2, 0, 1]; //0
 
 const findMissingNums = (arr1: number[], arr2: number[]) => {
@@ -28,7 +28,6 @@ const findMissingNums = (arr1: number[], arr2: number[]) => {
       if (arr1[i] == arr2[j]) {
         flag = true;
         break;
-
       }
     }
     if (!flag) notinarr1.push(arr1[i]);
@@ -36,13 +35,15 @@ const findMissingNums = (arr1: number[], arr2: number[]) => {
 
   const notInArr2 = arr2.filter((num) => !arr1.includes(num));
   return [...new Set(notinarr1), ...new Set(notInArr2)];
-
 };
 console.log(findMissingNums(arr1, arr2));
 
 // ***************************************************//
 
-const findDistinctIntegers = (nums1: number[], nums2: number[]): [number[], number[]] => {
+const findDistinctIntegers = (
+  nums1: number[],
+  nums2: number[]
+): [number[], number[]] => {
   const map1 = new Map<number, number>();
   const map2 = new Map<number, number>();
 
@@ -78,4 +79,4 @@ const findDistinctIntegers = (nums1: number[], nums2: number[]): [number[], numb
 const nums1 = [1, 2, 2, 3, 4, 4, 4];
 const nums2 = [3, 3, 4, 5, 6, 6];
 const result = findDistinctIntegers(nums1, nums2);
-console.log(result)
+console.log(result);

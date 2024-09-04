@@ -8,7 +8,7 @@ function missingNumber(nums: number[]): number {
 
 console.log(missingNumber([0, 3, 1, 4, 2, 5]));
 
-/* AMEX
+/* 
 Below is an array which needs to be filled to its highest number in the series in sequential order, starting at 1. 
 And return the number of positions that was filled. It should work for any array.
 

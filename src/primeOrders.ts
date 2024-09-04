@@ -14,7 +14,7 @@ function sortOrders(orders: string[]) {
   for (let i = 0; i < orders.length; i++) {
     const order = orders[i];
     const orderInfo = isPrime(order);
-    const isPrimeOrder = orderInfo.flag;
+    const isPrimeOrder = !orderInfo.flag; // Prime if the second part is NOT a number
     const orderId = orderInfo.id;
     const metadata = orderInfo.metadata;
 
@@ -25,18 +25,22 @@ function sortOrders(orders: string[]) {
     }
   }
 
+  // Sort prime orders by metadata and then by orderId (if metadata is the same)
   primeOrders = primeOrders.sort((a, b) => {
     if (a.metadata === b.metadata) {
-      return 0;
+      return a.orderId.localeCompare(b.orderId);
     }
-    return a.metadata < b.metadata ? -1 : 1;
+    return a.metadata.localeCompare(b.metadata);
   });
 
-  return primeOrders.concat(nonPrimeOrders);
+  // Concatenate the sorted prime orders with non-prime orders in original order
+  return primeOrders
+    .map((o) => o.order)
+    .concat(nonPrimeOrders.map((o) => o.order));
 }
 
-function isPrime(string: string) {
-  const orderSubString = string.split(" ");
+function isPrime(order: string) {
+  const orderSubString = order.split(" ");
   const id = orderSubString[0];
   const metadata = orderSubString.slice(1).join(" ");
   const flag = /^\d+$/.test(orderSubString[1]); // Check if the second part is a number

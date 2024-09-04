@@ -1,4 +1,3 @@
-// AMEX
 // Given a string 𝑆 consisting of 𝑁 letters 'a' and 'b', you can replace any letter with its counterpart ('a' with 'b' or 'b' with 'a') in one move.
 // The goal is to determine the minimum number of moves required to transform S into a string that contains no instances of three consecutive identical letters.
 
@@ -51,14 +50,14 @@ function solution(S: string): number {
   let i = 0;
 
   while (i < S.length) {
-      // Check if we have three consecutive identical letters
-      if (i + 2 < S.length && S[i] === S[i + 1] && S[i] === S[i + 2]) {
-          moves++;
-          // Skip past the current sequence of three identical letters
-          i += 3;
-      } else {
-          i++;
-      }
+    // Check if we have three consecutive identical letters
+    if (i + 2 < S.length && S[i] === S[i + 1] && S[i] === S[i + 2]) {
+      moves++;
+      // Skip past the current sequence of three identical letters
+      i += 3;
+    } else {
+      i++;
+    }
   }
 
   return moves;
@@ -66,4 +65,4 @@ function solution(S: string): number {
 
 // Example usage
 const S = "aaabbbaaaaa";
-console.log(solution(S)); 
+console.log(solution(S));

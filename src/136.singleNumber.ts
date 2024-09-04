@@ -13,8 +13,8 @@ function singleNumber(nums: number[]): number {
   //   if(map.get(key) == 1) return key
   // }
 
-  for (let i = 0; i < nums.length; i++) {
-    if (map.get(nums[i]) == 1) return nums[i];
+  for (const key of map.keys()) {
+    if (map.get(key) == 1) return key;
   }
 }
 
