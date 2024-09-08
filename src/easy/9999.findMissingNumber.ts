@@ -20,7 +20,7 @@ const arr1 = [1, 2, 3, 4, 5, 4]; // 4
 const arr2 = [3, 5, 2, 0, 1]; //0
 
 const findMissingNums = (arr1: number[], arr2: number[]) => {
-  const notinarr1 = [];
+  const notinarr1: number[] = [];
 
   for (let i = 0; i < arr1.length; i++) {
     let flag = false;

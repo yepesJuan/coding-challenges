@@ -1,32 +1,9 @@
-// // ABA => BAB
-// // AAAAA => BBBB
-
-// /**
-//  * @param {number} N
-//  * @param {string} C
-//  * @return {string}
-//  */
-// function getWrongAnswers(N: number, C: string): string {
-//   // const result = [];
-//   // for (let i = 0; i < N; i++) {
-//   //   if (C[i] == "A") result.push("B");
-//   //   else result.push("A");
-//   // }
-//   // return result.join();
-
-//   return C.split("")
-//     .map((char) => (char === "A" ? "B" : "A"))
-//     .join("");
-// }
-
-// console.log(getWrongAnswers(4, "BBBB"));
-
 const fs = require("fs");
 const path = require("path");
 
 // Define source and target directories
 const sourceDir = "./"; // Change this to your source directory
-const targetDir = "./easy"; // Change this to your target directory
+const targetDir = "./zMETA"; // Change this to your target directory
 
 // Ensure target directory exists
 if (!fs.existsSync(targetDir)) {
@@ -41,9 +18,9 @@ function moveFilesStartingWithNumber() {
       return;
     }
 
-    files.forEach((file) => {
+    files.forEach((file: string) => {
       // Check if the file starts with a number
-      if (/^\d/.test(file)) {
+      if (file.startsWith("META")) {
         const oldPath = path.join(sourceDir, file);
         const newPath = path.join(targetDir, file);
 
