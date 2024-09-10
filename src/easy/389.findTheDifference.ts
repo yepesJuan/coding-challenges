@@ -12,7 +12,7 @@ Constraints:
 t.length == s.length + 1
 s and t consist of lowercase English letters. */
 
-function findDifference(s: string, t: string) {
+function findDifference1(s: string, t: string) {
   let diff = 0;
 
   for (let i = 0; i < t.length; i++) {
@@ -42,6 +42,7 @@ function findDifference2(s: string, t: string) {
 }
 
 function findDifference3(s: string, t: string): string {
+  if (s.length == 0) return t;
   // Create frequency maps for both strings
   const frequencyMapS: Map<string, number> = new Map();
   const frequencyMapT: Map<string, number> = new Map();
@@ -66,6 +67,6 @@ function findDifference3(s: string, t: string): string {
   return "";
 }
 
-console.log(findDifference("abcd", "abcde"));
+console.log(findDifference1("abcd", "abcde"));
 console.log(findDifference2("13", "123"));
-console.log(findDifference3("", "y"));
+console.log(findDifference3("y", "ye"));
