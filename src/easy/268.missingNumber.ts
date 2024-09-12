@@ -4,6 +4,7 @@
 function missingNumber(nums: number[]): number {
   const set = new Set(nums);
   for (let i = 0; i <= nums.length; i++) if (!set.has(i)) return i;
+  return -1;
 }
 
 console.log(missingNumber([0, 3, 1, 4, 2, 5]));
@@ -24,7 +25,7 @@ function solution(arr: number[]): number {
   const max = Math.max(...arr);
   const set = new Set(arr);
 
-  let result = [];
+  let result: number[] = [];
 
   for (let i = 1; i < max; i++) if (!set.has(i)) result.push(i);
   return result.length;
