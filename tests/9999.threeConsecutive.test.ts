@@ -1,68 +1,26 @@
-// Given a string 𝑆 consisting of 𝑁 letters 'a' and 'b', you can replace any letter with its counterpart ('a' with 'b' or 'b' with 'a') in one move.
-// The goal is to determine the minimum number of moves required to transform S into a string that contains no instances of three consecutive identical letters.
+import { minimumMovesToAvoidThreeConsecutive as minTest } from "../src/easy/9999.threeConsecutive";
 
-// Example 1:
-// Input: "baaaaa"
-// Output: 1
-// Explanation: To eliminate the sequence "aaaa" (three consecutive 'a's), you can change the third 'a' to 'b', resulting in "baabaa".
-// Example 2:
-// Input: "baaabbaabbba"
-// Output: 2
-// Explanation: There are several valid transformations, but one approach is to change the sequence "aaa" to "aab" and "bbb" to "bba", resulting in "bbaabbaabbaa".
-// Example 3:
-// Input: "baabab"
-// Output: 0
-// Explanation: The string already contains no sequences of three consecutive identical letters.
+describe("minTest", () => {
+  it("should return 0 for strings with length less than 3", () => {
+    expect(minTest("a")).toBe(0);
+    expect(minTest("ab")).toBe(0);
+  });
 
-export const minimumMovesToAvoidThreeConsecutive = (S: string): number => {
-  if (S.length < 3) {
-    return 0;
-  }
+  it("should return correct number of moves for strings with three consecutive characters", () => {
+    expect(minTest("aaa")).toBe(1); // One segment of 'aaa'
+    expect(minTest("aaaa")).toBe(1); // One segment of 'aaa'
+    expect(minTest("aaaaa")).toBe(1); // One segment of 'aaaa'
+    expect(minTest("aaabbb")).toBe(2); // Two segments of 'aaa' and 'bbb'
+  });
 
-  let moves = 0;
-  let count = 1;
+  it("should handle mixed strings with no consecutive characters", () => {
+    expect(minTest("abc")).toBe(0); // No consecutive characters
+    expect(minTest("ababab")).toBe(0); // No consecutive characters
+  });
 
-  for (let i = 0; i < S.length - 1; i++) {
-    if (S[i] === S[i + 1]) {
-      count++;
-    } else {
-      if (count >= 3) {
-        moves += Math.floor(count / 3);
-      }
-      count = 1;
-    }
-  }
-  // Check the last segment
-  if (count >= 3) {
-    moves += Math.floor(count / 3);
-  }
-
-  return moves;
-};
-
-// Example usage:
-const input = "aaabbbaaaaaa";
-
-console.log(minimumMovesToAvoidThreeConsecutive(input)); // Output: 5
-
-function solution(S: string): number {
-  let moves = 0;
-  let i = 0;
-
-  while (i < S.length) {
-    // Check if we have three consecutive identical letters
-    if (i + 2 < S.length && S[i] === S[i + 1] && S[i] === S[i + 2]) {
-      moves++;
-      // Skip past the current sequence of three identical letters
-      i += 3;
-    } else {
-      i++;
-    }
-  }
-
-  return moves;
-}
-
-// Example usage
-const S = "aaabbbaaaaa";
-console.log(solution(S));
+  it("should handle strings with longer segments of consecutive characters", () => {
+    expect(minTest("aaabbbccc")).toBe(3); // Three segments of 'aaa', 'bbb', 'ccc'
+    expect(minTest("aabbaabbb")).toBe(1); // Two segments of 'aa' and 'bb'
+    expect(minTest("aabbaabbbaaabbaabbbbbaaaaabbb")).toBe(5); // Two segments of 'aa' and 'bb'
+  });
+});

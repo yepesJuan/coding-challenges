@@ -16,6 +16,7 @@ function singleNumber(nums: number[]): number {
   for (const key of map.keys()) {
     if (map.get(key) == 1) return key;
   }
+  return -1;
 }
 
 console.log(singleNumber([1, 2, 3, 4, 1, 2, 3]));

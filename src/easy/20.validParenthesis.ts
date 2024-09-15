@@ -38,7 +38,7 @@ function isValid2(s: string): boolean {
     "}": "{",
   };
 
-  const stack = [];
+  const stack: string[] = [];
 
   for (let i = 0; i < s.length; i++) {
     const currentBracket = s[i];
@@ -52,14 +52,13 @@ function isValid2(s: string): boolean {
 console.log(isValid2("({[{}]})"));
 
 function isValid3(s: string) {
-
   const map = new Map([
     ["(", ")"],
     ["{", "}"],
     ["[", "]"],
   ]);
 
-  const stack = [];
+  const stack: string[] = [];
 
   for (let i = 0; i < s.length; i++) {
     if (map.has(s[i])) {

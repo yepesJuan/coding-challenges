@@ -4,7 +4,7 @@
 const target = 17;
 const array = [2, 6, 8, 4, 9];
 
-const fastTwoSum = (arr: number[], _target: number): number[] => {
+const fastTwoSum = (arr: number[], _target: number) => {
   let index = 0;
   const map: Record<number, number> = {};
   for (let num of arr) {
@@ -14,7 +14,7 @@ const fastTwoSum = (arr: number[], _target: number): number[] => {
       return [map[difference], index];
     }
     map[num] = index;
-    console.log(map)
+    console.log(map);
     index++;
   }
 };

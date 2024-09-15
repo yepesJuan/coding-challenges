@@ -10,8 +10,8 @@
 // M             1000
 
 //There are six instances where subtraction is used:
-// I can be placed before V (5) and X (10) to make 4 and 9. 
-// X can be placed before L (50) and C (100) to make 40 and 90. 
+// I can be placed before V (5) and X (10) to make 4 and 9.
+// X can be placed before L (50) and C (100) to make 40 and 90.
 // C can be placed before D (500) and M (1000) to make 400 and 900.
 // Given a roman numeral, convert it to an integer.
 
@@ -20,7 +20,6 @@
 
 // Input: s = "MCMXCIV" // Output: 1994
 // Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
-
 
 // In this function we use prevValue to determine if the previous num should be sub or add.
 function romanToInt(s: string): number {
@@ -34,14 +33,13 @@ function romanToInt(s: string): number {
     M: 1000,
   };
   // "MCMXCIV""
-  const map  = new Map(Object.entries(romanIntegerMap))
+  const map = new Map(Object.entries(romanIntegerMap));
   // console.log(map)
   let result = 0;
   let prevValue = 0;
 
   for (let i = 0; i < s.length; i++) {
-    const curValue = map.get(s[i]); // or just romanIntegerMap[s[i]]
-
+    const curValue = map.get(s[i]) || 0; // or just romanIntegerMap[s[i]]
 
     if (curValue > prevValue) {
       result += curValue - 2 * prevValue;
@@ -86,4 +84,4 @@ function romanToInt2(s: string): number {
   return result;
 }
 
-console.log(romanToInt2("MCMXCIV"))
+console.log(romanToInt2("MCMXCIV"));

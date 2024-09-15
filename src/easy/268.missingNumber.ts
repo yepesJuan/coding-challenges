@@ -32,3 +32,5 @@ function solution(arr: number[]): number {
 }
 
 console.log(solution(arr2));
+
+export {};

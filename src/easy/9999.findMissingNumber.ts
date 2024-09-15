@@ -80,3 +80,5 @@ const nums1 = [1, 2, 2, 3, 4, 4, 4];
 const nums2 = [3, 3, 4, 5, 6, 6];
 const result = findDistinctIntegers(nums1, nums2);
 console.log(result);
+
+export { findDifference, findMissingNums, findDistinctIntegers };
