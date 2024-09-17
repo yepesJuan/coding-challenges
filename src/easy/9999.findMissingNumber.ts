@@ -34,7 +34,8 @@ const findMissingNums = (arr1: number[], arr2: number[]) => {
   }
 
   const notInArr2 = arr2.filter((num) => !arr1.includes(num));
-  return [...new Set(notinarr1), ...new Set(notInArr2)];
+
+  return [[...new Set(notinarr1)], [...new Set(notInArr2)]];
 };
 console.log(findMissingNums(arr1, arr2));
 
