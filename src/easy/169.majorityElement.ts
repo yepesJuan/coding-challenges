@@ -21,6 +21,8 @@ function majorityElement(nums: number[]): number {
   return candidate;
 }
 
+console.log(majorityElement([2, 2, 1, 1, 1, 2, 2])); // 2
+
 function majorityElement2(nums: number[]): number {
   let candidate = nums[0];
   let count = 1;
@@ -43,3 +45,5 @@ function majorityElement2(nums: number[]): number {
 
   return candidate;
 }
+
+console.log(majorityElement2([3, 2, 3])); // 3
