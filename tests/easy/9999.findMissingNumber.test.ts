@@ -3,7 +3,7 @@ import {
   findDifference,
   findMissingNums,
   findDistinctIntegers,
-} from "../src/easy/9999.findMissingNumber"; // Adjust the path as needed
+} from "../../src/easy/9999.findMissingNumber"; // Adjust the path as needed
 
 // Test Suite for findDifference function
 describe("findDifference", () => {

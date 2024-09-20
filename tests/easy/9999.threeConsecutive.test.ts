@@ -1,4 +1,4 @@
-import { minimumMovesToAvoidThreeConsecutive as minTest } from "../src/easy/9999.threeConsecutive";
+import { minimumMovesToAvoidThreeConsecutive as minTest } from "../../src/easy/9999.threeConsecutive";
 
 describe("minTest", () => {
   it("should return 0 for strings with length less than 3", () => {
