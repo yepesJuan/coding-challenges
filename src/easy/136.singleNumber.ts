@@ -9,10 +9,6 @@ function singleNumber(nums: number[]): number {
     index = 1;
   }
 
-  // for(const key of map.keys()) {
-  //   if(map.get(key) == 1) return key
-  // }
-
   for (const key of map.keys()) {
     if (map.get(key) == 1) return key;
   }
@@ -21,16 +17,16 @@ function singleNumber(nums: number[]): number {
 
 console.log(singleNumber([1, 2, 3, 4, 1, 2, 3]));
 
-function singleNumber2(nums: number[]): number {
+function _singleNumber(nums: number[]): number {
   if (nums.length === 1) {
     return nums[0];
   }
+  return nums.reduce((a, b) => a ^ b);
+
   // let unique = 0;
 
   // for (let i = 0; i < l; i += 1) {
   //   unique = unique ^ nums[i];
   // }
   // return unique;
-
-  return nums.reduce((a, b) => a ^ b);
 }
